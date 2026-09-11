@@ -1,0 +1,1 @@
+Guarda aquí tus fotos de producto. Deben llamarse igual que en js/products.js

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contacto — COREWEAR</title>
+<meta name="description" content="Escríbenos si encontraste un producto que deberíamos revisar o tienes una sugerencia.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container header-inner">
+    <a href="index.html" class="logo">CORE<span>WEAR</span></a>
+    <nav class="main-nav">
+      <a href="index.html">Inicio</a>
+      <a href="hombre.html">Hombre</a>
+      <a href="mujer.html">Mujer</a>
+      <a href="gym.html">Gym</a>
+      <a href="top-picks.html">Top Picks</a>
+      <a href="marcas.html">Marcas</a>
+      <a href="ofertas.html">Ofertas</a>
+      <a href="sobre.html">Sobre COREWEAR</a>
+    </nav>
+    <button class="nav-toggle" aria-label="Abrir menú">☰</button>
+  </div>
+</header>
+
+<section>
+  <div class="container">
+    <div class="section-head">
+      <h1>Contacto</h1>
+      <p>¿Encontraste un producto que deberíamos revisar? ¿Tienes alguna sugerencia para COREWEAR? Escríbenos.</p>
+    </div>
+
+    <form class="contact-form" id="contact-form">
+      <div>
+        <label for="name">Nombre</label>
+        <input type="text" id="name" name="name" required>
+      </div>
+      <div>
+        <label for="email">Tu correo</label>
+        <input type="email" id="email" name="email" required>
+      </div>
+      <div>
+        <label for="message">Mensaje</label>
+        <textarea id="message" name="message" required></textarea>
+      </div>
+      <button type="submit" class="btn btn-primary">Enviar mensaje</button>
+      <p class="small-note">Al enviar, se abrirá tu aplicación de correo con el mensaje listo para mandar a contacto.corewear@gmail.com</p>
+    </form>
+
+    <p style="margin-top:24px;">También puedes escribir directo a: <strong>contacto.corewear@gmail.com</strong></p>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <p>&copy; <span class="auto-year"></span> COREWEAR</p>
+    <nav class="footer-nav">
+      <a href="afiliados.html">Aviso de afiliados</a>
+      <a href="privacidad.html">Política de privacidad</a>
+      <a href="contacto.html">Contacto</a>
+    </nav>
+  </div>
+</footer>
+
+<script src="js/products.js"></script>
+<script src="js/render.js"></script>
+<script>
+  /* Formulario 100% gratis: arma un correo con lo que escribió la persona
+     y lo abre en su app de correo. No necesita servidor ni pagos. */
+  document.getElementById("contact-form").addEventListener("submit", function (e) {
+    e.preventDefault();
+    const name = document.getElementById("name").value;
+    const email = document.getElementById("email").value;
+    const message = document.getElementById("message").value;
+    const subject = encodeURIComponent("Mensaje desde COREWEAR — " + name);
+    const body = encodeURIComponent(message + "\n\nCorreo de contacto: " + email);
+    window.location.href = "mailto:contacto.corewear@gmail.com?subject=" + subject + "&body=" + body;
+  });
+</script>
+</body>
+</html>
